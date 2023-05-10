@@ -2,10 +2,13 @@ from rest_framework import serializers
 from .models import Category, Product
 
 class ProductSerializer(serializers.ModelSerializer):
+    category_name = serializers.ReadOnlyField(source='category.name')
+    price_type_description = serializers.ReadOnlyField(source='get_price_type_display')
+
     class Meta:
         model = Product
-        fields = ('id', 'name', 'image', 'category', 'description', 'price', 'price_type')
-        # fields = '__all__'          # Obtengo TODOS los campos de la tabla en el orden en que están generados en la tabla de SQLite
+        fields = ('id', 'name', 'image', 'category', 'category_name', 'description', 'price', 'price_type', 'price_type_description')
+        # fields = '__all__'          # Obtengo los campos de la tabla en el orden en que están generados en la tabla de SQLite
 
 class CategorySerializer(serializers.ModelSerializer):
     class Meta:
