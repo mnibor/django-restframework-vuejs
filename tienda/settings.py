@@ -42,6 +42,7 @@ BASE_APPS = [
 THIRD_APPS = [
     'rest_framework',
     'corsheaders',
+    'django_filters',
 ]
 
 OWN_APPS = [
@@ -75,6 +76,10 @@ CORS_ALLOW_METHODS = (
     'POST',
     'PUT',
 )
+
+REST_FRAMEWORK = {
+    'DEFAULT_FILTER_BACKENDS': ['django_filters.rest_framework.DjangoFilterBackend']
+}
 
 ROOT_URLCONF = 'tienda.urls'
 

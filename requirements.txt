@@ -1,5 +1,6 @@
 asgiref==3.6.0
 Django==4.1.9
+django-cors-headers==4.0.0
 django-filter==23.2
 djangorestframework==3.14.0
 importlib-metadata==6.6.0
